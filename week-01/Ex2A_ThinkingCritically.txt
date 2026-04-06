@@ -1,0 +1,23 @@
+1. Before doing any other investigation, these are the questions that came to my mind:
+- How did the author decide which foods to include in the analysis?
+- Does higher Google Trends search interest truly represent what people actually eat after a breakup?
+
+2. Google Trends search data can be found at:
+https://trends.google.com/trends/explore
+
+3a. The highest peak recorded for Milkshake was: 100
+3b. The lowest dip recorded was: 65
+
+4a. The highest peak for Hamburger: 100
+    The lowest peak for Hamburger: 68
+4b. The Milkshake line drops and is scaled down. Its peaks and dips are lower than before.
+
+5. Because Google Trends scales data relative to all search terms being compared.
+
+6a. There is no clear pattern or strong relationship between searches for Breakup and Hamburger. Their trends do not consistently rise or fall together.
+6b. There is no strong or consistent relationship between Breakup and Milkshake searches. Any similarities appear to be coincidental rather than a clear trend.
+
+7.The conclusions may not be fully reliable because Google Trends reflects relative search interest not actual behavior.
+
+8a.Top state for Milkshake: South Carolina
+8b.Top state for Hamburger: South Dakota
