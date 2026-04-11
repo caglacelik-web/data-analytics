@@ -1,0 +1,53 @@
+
+Questions from the lab workbook
+1. What conclusion can you reach about the responses to this question?
+2. Is the default summary or visualization helpful? How could it be improved?
+3. For questions with an “Other” option, where can you find the actual text of those
+responses? Do you notice anything that might be tricky about analyzing these?
+4. For questions calling for a written response, what challenges do you notice about
+finding trends or patterns in the answers provided?
+5. Now that you can see the responses, how might you recommend rephrasing this or
+question or the response options in a future survey?
+6. Is there anything that surprised you about the survey responses?
+7. Looking at the responses to questions 1 and 5, are there any ideas you might try to
+include in your morning routine, or any questions that you are also curious about?
+8. Pretend you are the instructor. Is there anything you can learn from this survey to help
+in how you approach teaching this class?
+9. Again, pretend you are the instructor. Do you think it was helpful or not helpful to
+make this survey anonymous? Why or why not? (If you can see both pros and cons,
+you may include both.)
+
+
+Survey Questions
+1)How tall are you? 
+- Responses vary but are not useful for the course. The chart shows distribution but doesn’t add value.Formatting differences can make it messy (Some people used metric system while others used USCS). Hard to find meaningful patterns. Could be standardized or removed. Surprising it was included. Doesn’t affect me or teaching. Anonymity is fine but not important.
+
+2)How many years experience do you have with Excel? 
+-Shows different skill levels, which is useful. Visualization works well for numeric data. No “Other,” but format differences may exist. Easy to find patterns. Could require numeric input only. Not surprising. Helps with preparation and teaching. Anonymity encourages honest answers.
+
+3)How many years of corporate experience do you have?
+-Shows range of experience, useful for understanding the class. Visualization is helpful. No “Other,” but not easy to analyze because some people put numeric answers but some put "None" or "N/A". Could define “corporate experience” better or filter with "Only numeric answers/Only text answers". Interesting variation. Doesn’t affect routine much. Useful for teaching. Anonymity is helpful.
+
+4)Student first name & 5)Student last name 
+-Only for identification, not useful for analysis. Visualization not helpful. No patterns. No improvement needed unless removed. Not surprising. Doesn’t affect anything. Only useful for records. Anonymity reduces usefulness.
+
+6)Birthdate
+-Shows age range but not very useful for the course. Visualization may show distribution but adds little value.People used different formats which gave some "bad data". Patterns are not very meaningful. Could be replaced with age range or filtered the question with desired format(mm/dd/yyyy etc.). Not surprising. Doesn’t affect routine or teaching. Anonymity is important since it’s personal.
+
+7)What gender do you identify as? 
+Shows diversity in the class, which is useful. Visualization works well for categories. “Other” responses may need manual review. Easy to see patterns. Could improve with more inclusive options. Not surprising. Doesn’t affect routine much. Helps instructor understand class diversity. Anonymity is important for comfort.
+
+8)City of residence 
+Shows where students are located, but formats may vary.(Some put the state or the suburb they live.) Visualization is less helpful without grouping.Responses are inconsistent. Hard to find patterns without cleaning data. Could use dropdown or separate fields. Not surprising. Doesn’t affect routine. Slightly useful for instructor. Anonymity is helpful.
+
+9)Which of the following best describes your current status?
+Shows student or work status, which is useful. Visualization works well for categories. “Other” responses needs manual review. Patterns are easy to see. Could improve with clearer options. Not surprising. Helps understand time availability. Useful for instructor planning. Anonymity helps honest answers.
+
+10)What is the highest level of education that you have completed?
+Shows education background, useful for understanding class level. Visualization is helpful. “Other” responses need review. Easy to find patterns. Could standardize options. Not surprising. Doesn’t affect routine much. Helpful for teaching level. Anonymity encourages honest responses.
+
+NOTES
+---------------------------------------------------------------
+The survey questions in the lab workbook did not fully match the survey questions provided. Because of this, I did my best to give general and relevant answers for each question based on the available data. I organized my responses in paragraph format to clearly address each prompt while staying as accurate and thoughtful as possible.
+---------------------------------------------------------------
+
