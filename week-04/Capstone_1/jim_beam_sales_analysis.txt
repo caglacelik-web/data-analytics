@@ -1,0 +1,193 @@
+/* Name: Cagla Celik
+Vendor: Jim Beam
+*/
+SELECT *
+FROM sales
+WHERE vendor ILIKE '%jim beam%'
+LIMIT 10;
+
+SELECT DISTINCT vendor
+FROM sales
+WHERE vendor ILIKE '%JIM BEAM%'
+
+SELECT DISTINCT category_name
+FROM sales
+WHERE vendor ILIKE '%JIM BEAM%'
+
+SELECT COUNT(*) AS jim_beam_transactions
+FROM sales
+WHERE vendor ILIKE '%JIM BEAM%'
+
+SELECT DISTINCT vendor
+FROM sales
+WHERE vendor ILIKE '%Jim Beam Brands%'
+
+SELECT DISTINCT category_name
+FROM sales
+WHERE vendor ILIKE '%Jim Beam Brands%'
+
+SELECT COUNT(*) AS jim_beam_transactions
+FROM sales
+WHERE vendor ILIKE '%Jim Beam Brands%'
+
+-- 1. Create a list of all transactions for your chosen [Category/Vendor] that took place in
+-- the last quarter of 2014, sorted by the total sale amount from highest to lowest.
+SELECT *
+FROM sales
+WHERE vendor ILIKE '%Jim Beam Brands%'
+AND date BETWEEN '2014-10-01' AND '2014-12-31'
+ORDER BY total DESC
+
+-- 2. Which transactions for your [Category/Vendor] had a bottle quantity greater than 12?
+-- Display the date, store number, item description, and total amount.
+SELECT date, store, description, total
+FROM sales
+WHERE vendor ILIKE '%Jim Beam Brands%'
+  AND bottle_qty > 12
+ORDER BY total DESC
+
+--3. Find all products in the products_table whose item_description contains
+--a specific keyword (e.g.,'Limited','Spiced'). What categories do they belong to?
+
+SELECT item_description, category_name
+FROM products
+WHERE item_description ILIKE '%SPICED%'
+
+-- 4. What is the total sales revenue and the average bottle price (btl_price) for
+-- your chosen [Category/Vendor]?
+
+SELECT 
+    SUM(total) AS total_revenue,
+    ROUND(AVG(btl_price::numeric), 2) AS avg_price
+FROM sales
+WHERE vendor ILIKE '%Jim Beam Brands%'
+
+-- 5. How many transactions were recorded for each specific item description within your
+-- chosen [Category]? Which specific product is the most frequently purchased?
+
+SELECT description, COUNT(*) AS num_sales
+FROM sales
+WHERE vendor ILIKE '%Jim Beam Brands%'
+GROUP BY description
+ORDER BY num_sales DESC
+
+-- 6. Which store generated the highest total revenue for your [Category/Vendor]?
+-- Which generated the lowest (but still greater than zero)?
+SELECT store, SUM(total) AS total_revenue
+FROM sales
+WHERE vendor ILIKE '%Jim Beam Brands%'
+GROUP BY store
+HAVING SUM(total) > 0
+ORDER BY total_revenue DESC
+
+-- 7. What is the total revenue for every vendor within your chosen [Category],
+-- sorted from highest to lowest?
+SELECT vendor, SUM(total) AS total_revenue 
+FROM sales
+WHERE category_name
+	IN 
+		(SELECT DISTINCT category_name FROM sales WHERE vendor ILIKE '%Jim Beam Brands%') 
+GROUP BY vendor
+ORDER BY total_revenue DESC 
+
+-- 8. Which stores had total sales revenue for your [Category/Vendor] exceeding $2,000?
+SELECT store, SUM(total) AS total_revenue
+FROM sales
+WHERE vendor ILIKE '%Jim Beam Brands%'
+GROUP BY store
+HAVING SUM(total) > 2000
+ORDER BY total_revenue DESC
+
+-- 9. Find all sales records where the category_name is either your chosen category
+-- or a closely related competitor category. (Data too big, couldn’t download .csv)
+
+SELECT category_name, vendor, total
+FROM sales
+WHERE category_name 
+	IN (
+    	SELECT DISTINCT category_name
+    	FROM sales
+    	WHERE vendor ILIKE '%Jim Beam Brands%'
+										)
+ORDER BY total DESC
+
+-- 10. List all transactions where the state bottle cost was between $10 and $20 for
+-- your [Category/Vendor].
+SELECT store, description, state_btl_cost, total
+FROM sales
+WHERE vendor ILIKE '%Jim Beam Brands%'
+  AND state_btl_cost::numeric BETWEEN 10 AND 20
+ORDER BY total DESC
+
+-- 11. Write a query that displays each store's total sales for your [Category/Vendor]
+-- along with the store's name and address from the stores table.
+SELECT 
+    s.store,
+    st.name,
+    st.store_address,
+    SUM(s.total) AS total_revenue
+FROM sales s
+JOIN stores st
+    ON s.store = st.store
+WHERE s.vendor ILIKE '%Jim Beam Brands%'
+GROUP BY s.store, st.name, st.store_address
+ORDER BY total_revenue DESC
+
+-- 12. For each sale in your [Category], display the transaction date, total amount,
+-- and the population of the county where the sale occurred by joining with counties_table
+SELECT 
+    s.date,
+    s.total,
+    c.county,
+    c.population
+FROM sales s
+JOIN counties c
+    ON s.county = c.county
+WHERE s.vendor ILIKE '%Jim Beam Brands%'
+ORDER BY s.total DESC
+
+-- 13. Write a query that shows total sales for your [Category/Vendor] by county.
+-- Which county generates the most revenue for you? --Polk
+SELECT 
+    county,
+    SUM(total) AS total_revenue
+FROM sales
+WHERE vendor ILIKE '%Jim Beam Brands%'
+GROUP BY county
+ORDER BY total_revenue DESC
+
+-- 14. Join the sales_table and products_table to show total revenue for your [Vendor]
+-- alongside the proof and pack size of the items.
+SELECT p.item_description, p.pack, SUM(s.total) AS revenue
+FROM sales s
+JOIN products p ON s.item = p.item_no
+WHERE s.vendor ILIKE '%jim beam%'
+GROUP BY p.item_description, p.pack
+ORDER BY revenue DESC
+
+-- 15. Are there counties with population over 10,000
+-- but zero Jim Beam sales?
+SELECT
+    c.county,
+    c.population
+FROM counties c
+LEFT JOIN sales s
+    ON c.county = s.county
+   AND s.vendor_name ILIKE '%Jim Beam%'
+WHERE c.population > 10000
+GROUP BY c.county, c.population
+HAVING COUNT(s.total) = 0
+ORDER BY c.population DESC
+
+-- 16. Display total revenue for your [Category/Vendor] grouped by the store_status
+--(from stores_table).
+-- Are active stores ('A') performing significantly better than others?
+SELECT
+    st.store_status,
+    SUM(s.total) AS total_revenue
+FROM sales s
+JOIN stores st
+    ON s.store = st.store
+WHERE s.vendor ILIKE '%Jim Beam%'
+GROUP BY st.store_status
+ORDER BY total_revenue DESC
