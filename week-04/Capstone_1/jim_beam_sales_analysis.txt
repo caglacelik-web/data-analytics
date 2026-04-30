@@ -158,7 +158,7 @@ LIMIT 50
 
 -----------------------------------------------------------------------------------------------
 -- 13. Write a query that shows total sales for your [Category/Vendor] by county.
--- Which county generates the most revenue for you? --Polk
+-- Which county generates the most revenue for you? 
 -----------------------------------------------------------------------------------------------
 
 SELECT 
