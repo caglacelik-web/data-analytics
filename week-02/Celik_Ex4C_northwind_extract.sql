@@ -32,3 +32,4 @@ FROM Categories
 SELECT OrderID, OrderDate, ShipName, ShipCountry
 FROM Orders
 LIMIT 50
+
