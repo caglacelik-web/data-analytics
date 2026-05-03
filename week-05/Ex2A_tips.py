@@ -1,17 +1,14 @@
-# Define known values
-food_cost = 79.25
-tax = 6.54
-tip = 12.00
+# Calculate tip amount on a restaurant bill
+bill_amount = float(input("What is your restaurant bill amount? "))
+tip_percentage = float(input("What tip percentage would you like to leave? (enter as decimal e.g. 0.20) "))
 
-# Calculate the unknown
-total_due = food_cost + tax + tip
+# Calculate tip
+tip_amount = bill_amount * tip_percentage
 
-# Display the results
-# print("The total due is " + str(total_due))
+# Display results
+print(f"The tip on a ${bill_amount:.2f} restaurant bill is ${tip_amount:.2f}")
 
-# str() converts the number total_due into a string so it can be joined with the other text using +.
-
-print("Food cost is " + str(food_cost) + " and tax is " + str(tax))
-#print("Tip is " + str(tip))
-print("Tip is " + format(tip, ".2f"))
-print("Total due is " + str(total_due))
+# Possible pitfalls with input():
+# 1. If the user types letters instead of numbers, the program will crash
+# 2. If the user types a percentage like "20" instead of "0.20" the result will be wrong
+# 3. input() always returns a string, so you must convert it with float() or int() for math operations. If you forget to convert, you'll get a TypeError when trying to multiply a string by a float.
