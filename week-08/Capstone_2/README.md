@@ -32,15 +32,13 @@ The analysis compares the territories managed by **Miami Vue** and **Bo Heap** t
 ## Project Files
 
 | File | Description |
-|---|---|
-| `
-
-| `Datasets` | .csv files used for the data |
-| `celik_sales_analysis.ipynb` | Full analysis notebook with charts and recommendations |
-| `chart1_monthly_revenue.png` | Monthly revenue trends by territory |
-| `chart2_store_rankings.png` | Store revenue comparison |
-| `chart3_category_revenue.png` | Revenue by product category |
-| `chart4_category_trends.png` | Top 3 Categories |
-| `Celik_EmporiUm_Territory_Analysis.pptx` | In-class powerpoint presentation |
+|------|-------------|
+| Datasets | .csv files used for the data |
+| celik_sales_analysis.ipynb | Full analysis notebook with charts and recommendations |
+| chart1_monthly_revenue.png | Monthly revenue trends by territory |
+| chart2_store_rankings.png | Store revenue comparison |
+| chart3_category_revenue.png | Revenue by product category |
+| chart4_category_trends.png | Top 3 Categories |
+| Celik_EmporiUm_Territory_Analysis.pptx | In-class PowerPoint presentation |
 ## Video Presentation
 Link coming soon
