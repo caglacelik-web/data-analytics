@@ -33,7 +33,7 @@ The analysis compares the territories managed by **Miami Vue** and **Bo Heap** t
 
 | File | Description |
 |------|-------------|
-| Datasets | .csv files used for the data |
+| Datasets | .csv files used for the analysis |
 | celik_sales_analysis.ipynb | Full analysis notebook with charts and recommendations |
 | chart1_monthly_revenue.png | Monthly revenue trends by territory |
 | chart2_store_rankings.png | Store revenue comparison |
